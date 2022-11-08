@@ -36,7 +36,7 @@ createApp({
     },
     mounted(){
         this.generateEmails();
-        this.wait(5000);
+        this.wait(1000);
         
     }
 }).mount('#app')
