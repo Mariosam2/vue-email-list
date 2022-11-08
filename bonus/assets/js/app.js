@@ -20,10 +20,17 @@ createApp({
            //console.log(this.emails)
           
         },
-        
+        /* async wait() {
+            const result = await this.generateEmails();
+            
+            return result;
+        } */
     },
     mounted(){
         this.generateEmails()
+        /* console.log(this.wait());
+        this.emails = this.wait();
+        console.log(this.emails); */
         
     }
 }).mount('#app')
