@@ -4,6 +4,7 @@ createApp({
         return {
             randomEmailUrl: 'https://flynn.boolean.careers/exercises/api/random/mail',
             emails: [],
+            tempArray: [],
         }
     },
     methods: {
@@ -13,24 +14,25 @@ createApp({
                 axios.get(this.randomEmailUrl)
                 .then(response => {
                     //console.log(response.data.response)
-                    this.emails.push(response.data.response);
+                    this.tempArray.push(response.data.response);
                     //console.log(this.emails)
                 })
             }
            //console.log(this.emails)
+           
           
         },
-        /* async wait() {
-            const result = await this.generateEmails();
+        wait(time) {
+            setTimeout(()=>{
+                this.emails = this.tempArray;
+            }, time);
             
-            return result;
-        } */
+            
+        }
     },
     mounted(){
-        this.generateEmails()
-        /* console.log(this.wait());
-        this.emails = this.wait();
-        console.log(this.emails); */
+        this.generateEmails();
+        this.wait(5000);
         
     }
 }).mount('#app')
