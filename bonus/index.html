@@ -11,9 +11,10 @@
 </head>
 <body>
     <div id="app">
-        <ul class="container">
+        <ul v-if="!errorMsg" class="container">
             <li v-for="email in emails">{{email}}</li>
         </ul>
+        <div class="error" v-else>{{errorMsg}}</div>
     </div>  
 </body>
 </html>

@@ -3,6 +3,7 @@ createApp({
     data() {
         return {
             randomEmailUrl: 'https://flynn.boolean.careers/exercises/api/random/mail',
+            errorMsg: null,
             emails: [],
             tempArray: [],
         }
@@ -16,6 +17,9 @@ createApp({
                     //console.log(response.data.response)
                     this.tempArray.push(response.data.response);
                     //console.log(this.emails)
+                })
+                .catch(error => {
+                    this.errorMsg = error.message;
                 })
             }
            //console.log(this.emails)
